@@ -35,17 +35,17 @@
     </string-array>
     <string-array name="fp_keys_listValues">
         <item>0</item>
-        <item>100</item> <!-- home -->
-        <item>101</item> <!-- power -->
-        <item>102</item> <!-- back -->
-        <item>103</item> <!-- recents -->
+        <item>102</item> <!-- home -->
+        <item>116</item> <!-- power -->
+        <item>158</item> <!-- back -->
+        <item>580</item> <!-- recents -->
         <item>121</item> <!-- last app -->
-        <item>104</item> <!-- volume up -->
-        <item>105</item> <!-- volume down -->
-        <item>106</item> <!-- voice assistant -->
-        <item>107</item> <!-- play/pause -->
-        <item>108</item> <!-- previous track -->
-        <item>109</item> <!-- next track -->
+        <item>115</item> <!-- volume up -->
+        <item>114</item> <!-- volume down -->
+        <item>582</item> <!-- voice assistant -->
+        <item>164</item> <!-- play/pause -->
+        <item>165</item> <!-- previous track -->
+        <item>163</item> <!-- next track -->
         <item>110</item> <!-- flashlight -->
         <item>111</item> <!-- camera -->
         <item>112</item> <!-- screenshot -->

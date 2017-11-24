@@ -46,20 +46,21 @@ public class Constants {
     };
 
     // FP actions
-    public static final int ACTION_HOME = 100;
-    public static final int ACTION_POWER = 101;
-    public static final int ACTION_BACK = 102;
-    public static final int ACTION_RECENTS = 103;
-    public static final int ACTION_VOLUME_UP = 104;
-    public static final int ACTION_VOLUME_DOWN = 105;
-    public static final int ACTION_VOICE_ASSISTANT = 106;
-    public static final int ACTION_PLAY_PAUSE = 107;
-    public static final int ACTION_PREVIOUS_TRACK = 108;
-    public static final int ACTION_NEXT_TRACK = 109;
+    public static final int ACTION_HOME = 102;
+    public static final int ACTION_POWER = 116;
+    public static final int ACTION_BACK = 158;
+    public static final int ACTION_RECENTS = 580;
+    public static final int ACTION_VOLUME_UP = 115;
+    public static final int ACTION_VOLUME_DOWN = 114;
+    public static final int ACTION_VOICE_ASSISTANT = 582;
+    public static final int ACTION_PLAY_PAUSE = 164;
+    public static final int ACTION_PREVIOUS_TRACK = 165;
+    public static final int ACTION_NEXT_TRACK = 163;
+    // FP extra actions
     public static final int ACTION_FLASHLIGHT = 110;
     public static final int ACTION_CAMERA = 111;
     public static final int ACTION_SCREENSHOT = 112;
-    public static final int ACTION_BROWSER = 116;
+    public static final int ACTION_BROWSER = 122;
     public static final int ACTION_DIALER = 117;
     public static final int ACTION_EMAIL = 118;
     public static final int ACTION_MESSAGES = 119;
@@ -263,7 +264,7 @@ public class Constants {
     public static void writePreference(Context context, String pref) {
 
         String value = "1";
-        Log.e(TAG, "Write Pref: " + pref);
+        Log.v(TAG, "Write Pref: " + pref);
         if (!pref.equals(FP_KEYS) && !pref.equals(FP_KEY_DBLTAP) && !pref.equals(FP_KEY_HOLD) && !pref.equals(FP_KEY_LEFT) && !pref.equals(FP_KEY_RIGHT) &&
             !pref.equals(FP_KEYS_OFF) && !pref.equals(FP_KEY_DBLTAP_OFF) && !pref.equals(FP_KEY_HOLD_OFF) && !pref.equals(FP_KEY_LEFT_OFF) && !pref.equals(FP_KEY_RIGHT_OFF) && !pref.equals(GESTURE_SWIPE_RIGHT) && !pref.equals(GESTURE_SWIPE_LEFT) && !pref.equals(GESTURE_SWIPE_DOWN) && !pref.equals(GESTURE_SWIPE_UP))
             value = isPreferenceEnabled(context, pref) ? "1" : "0";
@@ -271,10 +272,10 @@ public class Constants {
             value = GetPreference(context, pref);
 
         String node = sBooleanNodePreferenceMap.get(pref);
-            Log.e(TAG, "Write " + value + " to node " + node);
+            Log.v(TAG, "Write " + value + " to node " + node);
 
         if (!FileUtils.writeLine(node, value)) {
-            Log.w(TAG, "Write " + value + " to node " + node +
+            Log.e(TAG, "Write " + value + " to node " + node +
                 "failed while restoring saved preference values");
         }
     }
