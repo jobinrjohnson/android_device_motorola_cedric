@@ -30,6 +30,8 @@ import org.lineageos.settings.device.actions.UpdatedStateNotifier;
 import org.lineageos.settings.device.actions.CameraActivationAction;
 import org.lineageos.settings.device.actions.TorchAction;
 
+import lineageos.providers.LineageSettings;
+
 public class LineageActionsSettings {
     private static final String TAG = "LineageActions";
 
@@ -40,6 +42,7 @@ public class LineageActionsSettings {
     private static final String GESTURE_IR_SILENCER_KEY = "gesture_ir_silencer";
     private static final String GESTURE_FLIP_TO_MUTE_KEY = "gesture_flip_to_mute";
     private static final String GESTURE_LIFT_TO_SILENCE_KEY = "gesture_lift_to_silence";
+    private static final String NAVBAR_HIDDEN = "navbar_hidden";
 
     private final Context mContext;
     private final UpdatedStateNotifier mUpdatedStateNotifier;
@@ -138,6 +141,10 @@ public class LineageActionsSettings {
                 || Constants.FP_KEYS_OFF.equals(key) || Constants.FP_KEY_DBLTAP_OFF.equals(key) || Constants.FP_KEY_HOLD_OFF.equals(key) ||  Constants.FP_KEY_LEFT_OFF.equals(key) || Constants.FP_KEY_RIGHT_OFF.equals(key)
                 || Constants.GESTURE_SWIPE_RIGHT.equals(key) || Constants.GESTURE_SWIPE_LEFT.equals(key) || Constants.GESTURE_SWIPE_DOWN.equals(key) || Constants.GESTURE_SWIPE_UP.equals(key)) {
                 Constants.writePreference(mContext, key);
+                updated = false;
+            } else if (NAVBAR_HIDDEN.equals(key)) {
+                int status = sharedPreferences.getBoolean(NAVBAR_HIDDEN,false) ? 0 : 1;
+                LineageSettings.Global.putInt(mContext.getContentResolver(),LineageSettings.Global.DEV_FORCE_SHOW_NAVBAR, status);
                 updated = false;
             } else {
                 updated = false;
