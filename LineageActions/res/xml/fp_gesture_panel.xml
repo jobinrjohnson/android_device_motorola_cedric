@@ -20,6 +20,12 @@
         android:title="@string/fingerprint_actions_screenon" >
 
         <SwitchPreference
+            android:key="navbar_hidden"
+            android:defaultValue="0"
+            android:title="@string/fingerprint_hidenavbar"
+            android:summary="@string/fingerprint_hidenavbar_summary" />
+
+        <SwitchPreference
             android:key="fp_haptic"
             android:defaultValue="0"
             android:title="@string/haptic_feedback"

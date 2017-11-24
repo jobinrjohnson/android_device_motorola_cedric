@@ -31,9 +31,11 @@ import org.lineageos.settings.device.util.FileUtils;
 import org.lineageos.settings.device.actions.Constants;
 import org.lineageos.settings.device.ServiceWrapper.LocalBinder;
 
+import lineageos.providers.LineageSettings;
+
 public class BootCompletedReceiver extends BroadcastReceiver {
     static final String TAG = "LineageActions";
-    final String NAVBAR_SHOWN = "navbar_shown";
+    final String NAVBAR_HIDDEN = "navbar_hidden";
 
     private ServiceWrapper mServiceWrapper;
 
@@ -45,6 +47,10 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         for (String pref : Constants.sPrefKeys) {
              Constants.writePreference(context, pref);
         }
+        // Show or hide navbar
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        int status = sharedPrefs.getBoolean(NAVBAR_HIDDEN,false) ? 0 : 1;
+        LineageSettings.Global.putInt(context.getContentResolver(),LineageSettings.Global.DEV_FORCE_SHOW_NAVBAR, status);
 
         context.startService(new Intent(context, ServiceWrapper.class));
     }

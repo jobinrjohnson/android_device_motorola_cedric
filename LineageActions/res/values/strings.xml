@@ -29,6 +29,8 @@
     <!-- Fingerprint gestures -->
     <string name="fingerprint_gestures_title">Fingerprint gestures</string>
     <string name="fingerprint_gestures_summary">Use fingerprint gestures</string>
+    <string name="fingerprint_hidenavbar">Hide Navbar</string>
+    <string name="fingerprint_hidenavbar_summary">Hide navbar when fingerprint gestures are on</string>
     <string name="fingerprint_gestures_manage_summary">Manage fingerprint gestures</string>
     <string name="fingerprint_actions_screenon">Actions with screen on</string>
     <string name="fingerprint_tap_title">Single tap</string>
