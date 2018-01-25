@@ -34,7 +34,7 @@ LOCAL_SRC_FILES := \
     QCameraHAL3Test.cpp
 
 
-LOCAL_SHARED_LIBRARIES:= libutils libcamera_client liblog libcamera_metadata libcutils
+LOCAL_SHARED_LIBRARIES:= libutils libcamera_client liblog libcamera_metadata libcutils libgui
 
 LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 
